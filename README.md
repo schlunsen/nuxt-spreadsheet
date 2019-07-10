@@ -38,7 +38,24 @@ yarn add nuxt-spreadsheet # or npm install nuxt-spreadsheet
 
 Add the spreadsheet to your page
 ``` html
-    <spreadsheet :options="options" :data="data" :onChange="onChange" ref="spreadsheet"/>
+<template>
+  <div>
+      <spreadsheet :options="options" :data="data" :onChange="onChange" ref="spreadsheet"/>
+  </div>
+</template>
+
+<script>
+export default {
+  methods{
+    onChange: function(data) {
+      
+    }
+  }
+
+}
+</script>
+
+
 ```
 
 The x-data-spreadsheet spreadsheet object can be found via refs: ```this.$refs.spreadsheet.spreadsheet``` 
