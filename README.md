@@ -36,7 +36,7 @@ yarn add nuxt-spreadsheet # or npm install nuxt-spreadsheet
 ## Usage
 
 
-Add the map to your page
+Add the spreadsheet to your page
 ``` html
     <spreadsheet :options="options" :data="data" :onChange="onChange" ref="spreadsheet"/>
 ```
