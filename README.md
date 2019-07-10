@@ -33,6 +33,16 @@ yarn add nuxt-spreadsheet # or npm install nuxt-spreadsheet
 }
 ```
 
+## Usage
+
+
+Add the map to your page
+``` html
+    <spreadsheet :options="options" :data="data" :onChange="onChange" ref="spreadsheet"/>
+```
+
+The x-data-spreadsheet spreadsheet object can be found via refs: ```this.$refs.spreadsheet.spreadsheet``` 
+
 ## Development
 
 1. Clone this repository
