@@ -1,6 +1,6 @@
 {
   "name": "nuxt-spreadsheet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A nuxt module for x-data-spreadsheet",
   "license": "MIT",
   "contributors": [
