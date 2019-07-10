@@ -9,14 +9,14 @@
 
 > A nuxt module for x-data-spreadsheet
 
-[📖 **Release Notes**](./CHANGELOG.md)
+Nuxt module for [https://github.com/myliang/x-spreadsheet](https://github.com/myliang/x-spreadsheet)
 
 ## Setup
 
 1. Add `nuxt-spreadsheet` dependency to your project
 
 ```bash
-yarn add nuxt-spreadsheet # or npm install nuxt-spreadsheet
+npm install nuxt-spreadsheet
 ```
 
 2. Add `nuxt-spreadsheet` to the `modules` section of `nuxt.config.js`
@@ -24,11 +24,7 @@ yarn add nuxt-spreadsheet # or npm install nuxt-spreadsheet
 ```js
 {
   modules: [
-    // Simple usage
     'nuxt-spreadsheet',
-
-    // With options
-    ['nuxt-spreadsheet', { /* module options */ }]
   ]
 }
 ```
@@ -46,9 +42,25 @@ Add the spreadsheet to your page
 
 <script>
 export default {
-  methods{
+  data() {
+    return {
+      spreadsheet: null,
+      // If other options needed
+      options: {
+        ...
+      },
+      // Initial data for spreadsheet
+      data: {
+        ...
+      }
+    }
+  },
+  mounted() {
+    this.spreadsheet = this.$refs.spreadsheet.spreadsheet
+  },
+  methods: {
     onChange: function(data) {
-      
+
     }
   }
 
@@ -59,6 +71,48 @@ export default {
 ```
 
 The x-data-spreadsheet spreadsheet object can be found via refs: ```this.$refs.spreadsheet.spreadsheet``` 
+
+See [https://github.com/myliang/x-spreadsheet/blob/master/docs/index.html](https://github.com/myliang/x-spreadsheet/blob/master/docs/index.html) for data format
+
+
+## Options
+```javascript
+// default options
+{
+  showToolbar: true,
+  showGrid: true,
+  showContextmenu: true,
+  view: {
+    height: () => document.documentElement.clientHeight,
+    width: () => document.documentElement.clientWidth,
+  },
+  row: {
+    len: 100,
+    height: 25,
+  },
+  col: {
+    len: 26,
+    width: 100,
+    indexWidth: 60,
+    minWidth: 60,
+  },
+  style: {
+    bgcolor: '#ffffff',
+    align: 'left',
+    valign: 'middle',
+    textwrap: false,
+    strike: false,
+    underline: false,
+    color: '#0a0a0a',
+    font: {
+      name: 'Helvetica',
+      size: 10,
+      bold: false,
+      italic: false,
+    },
+  },
+}
+```
 
 ## Development
 
